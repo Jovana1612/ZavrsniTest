@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -147,23 +147,11 @@ namespace zavrsniTestSelenium
             IWebElement fname = driver.FindElement(By.Id("et_pb_signup_firstname"));
             fname.SendKeys(FirstName);
 
-            IWebElement email = driver.FindElement(By.ClassName("et_pb_newsletter_button_text"));
+            IWebElement email = driver.FindElement(By.Id("et_pb_signup_email"));
             email.SendKeys(Mail);
         }
+            
 
-        [Test]
-        public void Test5()
-        {
-            GoToURL("https://www.qtptutorial.net/automation-practice/");
-            Sleep(10);
-
-            IWebElement table = driver.FindElement(By.XPath("//td[contains(.,'$120,000+')]"));
-
-            bool tableH = table.Displayed;
-            isDisplayed = Convert.ToString(tableH);
-
-        }
-        
 
         [TearDown]
         public void CloseBrowser()
